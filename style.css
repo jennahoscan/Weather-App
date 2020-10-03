@@ -41,9 +41,9 @@ h2 {
 }
 
 #on-icon {
-position: relative;
-left: 650px;
-bottom: 135px;
+  position: relative;
+  left: 650px;
+  bottom: 135px;
 }
 
 #degree {
@@ -53,41 +53,39 @@ bottom: 135px;
   font-weight: bold;
 }
 
-#degree-symbol{
-    font-size: 40px;
-    position: relative;
-    bottom: 25px;
-    left: 30px;
+#degree-symbol {
+  font-size: 40px;
+  position: relative;
+  bottom: 25px;
+  left: 30px;
 }
 
-.button{
+.button {
   position: relative;
   left: 45px;
 }
- 
-button{
-    background: none;
-    border: none;
-    font-size: 25px;
-    color: #ffffff;
-    font-family: "Quicksand", sans-serif;
-    font-weight: bold;
 
+button {
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
 }
 
-#celsius{
-    padding-right: 5px;
+#celsius {
+  padding-right: 5px;
 }
-#farenheit{
-    border-left: 1px solid #fff;
-    padding-left: 5px;
+#farenheit {
+  border-left: 1px solid #fff;
+  padding-left: 5px;
 }
 p.forecast {
-position: relative;
-bottom: 50px;
+  position: relative;
+  bottom: 50px;
   font-size: 20px;
   font-weight: 400;
-
 }
 
 span.time {
@@ -116,7 +114,6 @@ img.icon {
   height: 175px;
   opacity: 0.75;
   justify-content: center;
-
 }
 
 input {
@@ -182,4 +179,8 @@ div.arrows {
   top: 275px;
   right: 100px;
   opacity: 0.35;
+}
+
+#open-source {
+  z-index: 1;
 }
