@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+}
+
+h1,
+h2,
+p,
+span {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 75px;
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+#on-icon {
+position: relative;
+left: 650px;
+bottom: 135px;
+}
+
+#degree {
+  position: relative;
+  left: 35px;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+#degree-symbol{
+    font-size: 40px;
+    position: relative;
+    bottom: 25px;
+    left: 30px;
+}
+
+.button{
+  position: relative;
+  left: 45px;
+}
+ 
+button{
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #ffffff;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+
+}
+
+#celsius{
+    padding-right: 5px;
+}
+#farenheit{
+    border-left: 1px solid #fff;
+    padding-left: 5px;
+}
+p.forecast {
+position: relative;
+bottom: 50px;
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+span.time {
+  font-size: 25px;
+  font-weight: 600;
+  width: 150px;
+}
+
+img.grass {
+  width: 100vw;
+  height: 30%;
+  position: fixed;
+  bottom: 0;
+}
+
+img.menu {
+  width: 50px;
+  height: 50px;
+  margin-left: 25px;
+  opacity: 0.75;
+  margin-right: 100px;
+}
+
+img.icon {
+  width: 175px;
+  height: 175px;
+  opacity: 0.75;
+  justify-content: center;
+
+}
+
+input {
+  margin-right: 25px;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+}
+
+.weather {
+  justify-content: center;
+}
+div.arrows {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  z-index: -1;
+}
+
+.left-arrow {
+  width: 50px;
+  height: 80px;
+  margin-left: 400px;
+}
+
+.right-arrow {
+  width: 50px;
+  height: 80px;
+  margin-right: 400px;
+}
+
+.animation-icon {
+  width: 175px;
+  z-index: -1;
+}
+
+#one {
+  position: fixed;
+  top: 100px;
+  left: 50px;
+  opacity: 0.5;
+}
+
+#two {
+  position: fixed;
+  top: 300px;
+  left: 175px;
+  opacity: 0.25;
+}
+
+#three {
+  position: fixed;
+  top: 160px;
+  right: 50px;
+  opacity: 0.75;
+}
+
+#four {
+  position: fixed;
+  top: 275px;
+  right: 100px;
+  opacity: 0.35;
+}

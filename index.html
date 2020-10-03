@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <img class="menu" src="menu.png" alt="Menu Icon" />
+      <span class="time">Current Time</span>
+      <form id="search-form">
+        <input type="search" id="search-input" />
+      </form>
+    </header>
+    <main>
+      <h1>Baltimore</h1>
+      <h2>Current Date</h2>
+      <div class="weather">
+        <div class="arrows">
+          <img class="left-arrow" src="leftarrow.png" />
+          <img class="icon" src="circle.png" alt="Sun Icon" />
+          <img class="right-arrow" src="rightarrow.png" />
+        </div>
+        <div id="on-icon">
+          <span id="degree">15</span><span id="degree-symbol">&deg</span><br>
+          <div class = "button">
+          <button id="celsius">C</button>
+          <button id="farenheit">F</button>
+          </div>
+        </div>
+        <p class="forecast">
+          <span>Partly Cloudy</span><br />
+          Humidity: 55% | Wind: 5 mph
+        </p>
+      </div>
+      <img class="animation-icon" id="one" src="cloud.png" />
+      <img class="animation-icon" id="two" src="cloud.png" />
+      <img class="animation-icon" id="three" src="cloud.png" />
+      <img class="animation-icon" id="four" src="cloud.png" />
+    </main>
+    <img class="grass" src="Grass.png" alt="An illustration of grass." />
+    <script src="main.js"></script>
+  </body>
+</html>
