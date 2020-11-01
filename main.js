@@ -82,45 +82,31 @@ function getTodaysForecast(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
 
-  let hours = new Date().getHours();
   let icon = document.querySelector("#icon");
-  let value = response.data.weather[0].id;
   let code = response.data.weather[0].icon;
-  if (value > 199 && value < 233) {
+  if (code === "11d") {
     icon.setAttribute("src", "Images/Thunderstorm.png");
-  } else if (value > 299 && value < 322) {
+  } else if (code === "09d") {
     icon.setAttribute("src", "Images/Rain.png");
-  } else if (value > 499 && value < 505 && code === "10d") {
+  } else if (code === "10d") {
     icon.setAttribute("src", "Images/DayRain.png");
-  } else if (value > 499 && value < 505 && hours > 18 && hours < 5) {
+  } else if (code === "09d") {
     icon.setAttribute("src", "Images/NightRain.png");
-  } else if (value === 511) {
-    icon.setAttribute("src", "Images/Hail.png");
-  } else if (value > 519 && value < 532 && code === "09d") {
-    icon.setAttribute("src", "Images/DayRain.png");
-  } else if (value > 519 && value < 532 && hours > 18 && hours < 5) {
-    icon.setAttribute("src", "Images/NightRain.png");
-  } else if (value > 599 && value < 623) {
+  } else if (code === "13d") {
     icon.setAttribute("src", "Images/Snow.png");
-  } else if (value > 710 && value < 742) {
-    icon.setAttribute("src", "Images/Wind.png");
-  } else if (value === 701) {
+  } else if (code === "50d") {
     icon.setAttribute("src", "Images/Mist.png");
-  } else if (value === 771 || value === 781) {
-    icon.setAttribute("src", "Images/Wind.png");
-  } else if (value > 710 && value < 742) {
-    icon.setAttribute("src", "Images/Wind.png");
-  } else if (value === 800 && code === "01d") {
+  } else if (code === "01d") {
     icon.setAttribute("src", "Images/Sun.png");
-  } else if (value === 800 && code === "01n") {
+  } else if (code === "01n") {
     icon.setAttribute("src", "Images/Moon.png");
-  } else if (value === 801 && code === "02d") {
+  } else if (code === "02d") {
     icon.setAttribute("src", "Images/DayCloud.png");
-  } else if (value === 801 && code === "02n") {
+  } else if (code === "02n") {
     icon.setAttribute("src", "Images/NightCloud.png");
-  } else if (value === 802) {
+  } else if (code === "03d" || code === "03n") {
     icon.setAttribute("src", "Images/OneCloud.png");
-  } else if (value === 803 || value === 804) {
+  } else if (code === "04d" || code === "04n") {
     icon.setAttribute("src", "Images/Clouds.png");
   }
 
@@ -257,24 +243,17 @@ function fiveDayForecast(response) {
   axios.get(apiUrl).then(getWeeklyForecast);
 }
 
+let pageNumber = 6;
+let pages = [];
 function getWeeklyForecast(response) {
-  let pageNumber = 6;
-
-  const nextTag = document.querySelector("#right-arrow");
-  const prevTag = document.querySelector("#left-arrow");
-  const degreeTag = document.querySelector("#degree");
-  const descriptionTag = document.querySelector("#description");
-  const humidityTag = document.querySelector("#humidity");
-  const windTag = document.querySelector("#wind");
-  const dateTag = document.querySelector("#date");
-
-  const pages = [
+  pages = [
     {
       date: formatDate(response.data.daily[1].dt * 1000),
       degree: Math.round(response.data.daily[1].temp.day - 273.15),
       description: response.data.daily[1].weather[0].description,
       humidity: response.data.daily[1].humidity,
       wind: Math.round(response.data.daily[1].wind_speed),
+      icon: response.data.daily[1].weather[0].icon,
     },
     {
       date: formatDate(response.data.daily[2].dt * 1000),
@@ -282,6 +261,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[2].weather[0].description,
       humidity: response.data.daily[2].humidity,
       wind: Math.round(response.data.daily[2].wind_speed),
+      icon: response.data.daily[2].weather[0].icon,
     },
     {
       date: formatDate(response.data.daily[3].dt * 1000),
@@ -289,6 +269,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[3].weather[0].description,
       humidity: response.data.daily[3].humidity,
       wind: Math.round(response.data.daily[3].wind_speed),
+      icon: response.data.daily[3].weather[0].icon,
     },
     {
       date: formatDate(response.data.daily[4].dt * 1000),
@@ -296,6 +277,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[4].weather[0].description,
       humidity: response.data.daily[4].humidity,
       wind: Math.round(response.data.daily[4].wind_speed),
+      icon: response.data.daily[4].weather[0].icon,
     },
     {
       date: formatDate(response.data.daily[5].dt * 1000),
@@ -303,6 +285,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[5].weather[0].description,
       humidity: response.data.daily[5].humidity,
       wind: Math.round(response.data.daily[5].wind_speed),
+      icon: response.data.daily[5].weather[0].icon,
     },
     {
       date: formatDate(response.data.daily[6].dt * 1000),
@@ -310,6 +293,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[6].weather[0].description,
       humidity: response.data.daily[6].humidity,
       wind: Math.round(response.data.daily[6].wind_speed),
+      icon: response.data.daily[6].weather[0].icon,
     },
     {
       date: formatDate(response.data.current.dt * 1000),
@@ -317,90 +301,83 @@ function getWeeklyForecast(response) {
       description: response.data.current.weather[0].description,
       humidity: response.data.current.humidity,
       wind: Math.round(response.data.current.wind_speed),
+      icon: response.data.current.weather[0].icon,
     },
   ];
-
-  function updateSection() {
-    console.log(response.data);
-    dateTag.innerHTML = pages[pageNumber].date;
-    degreeTag.innerHTML = pages[pageNumber].degree;
-    descriptionTag.innerHTML = pages[pageNumber].description;
-    humidityTag.innerHTML = pages[pageNumber].humidity;
-    windTag.innerHTML = pages[pageNumber].wind;
-    let hours = new Date().getHours();
-    let icon = document.querySelector("#icon");
-    let value = response.data.daily[pageNumber].weather[0].id;
-    let code = response.data.daily[pageNumber].weather[0].icon;
-    if (value > 199 && value < 233) {
-      icon.setAttribute("src", "Images/Thunderstorm.png");
-    } else if (value > 299 && value < 322) {
-      icon.setAttribute("src", "Images/Rain.png");
-    } else if (value > 499 && value < 505 && code === "10d") {
-      icon.setAttribute("src", "Images/DayRain.png");
-    } else if (value > 499 && value < 505 && hours > 18 && hours < 5) {
-      icon.setAttribute("src", "Images/NightRain.png");
-    } else if (value === 511) {
-      icon.setAttribute("src", "Images/Hail.png");
-    } else if (value > 519 && value < 532 && code === "09d") {
-      icon.setAttribute("src", "Images/DayRain.png");
-    } else if (value > 519 && value < 532 && hours > 18 && hours < 5) {
-      icon.setAttribute("src", "Images/NightRain.png");
-    } else if (value > 599 && value < 623) {
-      icon.setAttribute("src", "Images/Snow.png");
-    } else if (value > 710 && value < 742) {
-      icon.setAttribute("src", "Images/Wind.png");
-    } else if (value === 701) {
-      icon.setAttribute("src", "Images/Mist.png");
-    } else if (value === 771 || value === 781) {
-      icon.setAttribute("src", "Images/Wind.png");
-    } else if (value > 710 && value < 742) {
-      icon.setAttribute("src", "Images/Wind.png");
-    } else if (value === 800 && code === "01d") {
-      icon.setAttribute("src", "Images/Sun.png");
-    } else if (value === 800 && code === "01n") {
-      icon.setAttribute("src", "Images/Moon.png");
-    } else if (value === 801 && code === "02d") {
-      icon.setAttribute("src", "Images/DayCloud.png");
-    } else if (value === 801 && code === "02n") {
-      icon.setAttribute("src", "Images/NightCloud.png");
-    } else if (value === 802) {
-      icon.setAttribute("src", "Images/OneCloud.png");
-    } else if (value === 803 || value === 804) {
-      icon.setAttribute("src", "Images/Clouds.png");
-    }
-  }
-
-  const next = function () {
-    pageNumber = pageNumber + 1;
-    if (pageNumber > pages.length - 1) {
-      pageNumber = 0;
-    }
-    updateSection();
-  };
-
-  const prev = function () {
-    pageNumber = pageNumber - 1;
-    if (pageNumber < 0) {
-      pageNumber = pages.length - 1;
-    }
-    updateSection();
-  };
-
-  nextTag.addEventListener("click", function () {
-    next();
-  });
-
-  prevTag.addEventListener("click", function () {
-    prev();
-  });
-
-  document.addEventListener("keyup", function (event) {
-    console.log(event);
-    if (event.key === "ArrowRight") {
-      next();
-    }
-    if (event.key === "ArrowLeft") {
-      prev();
-    }
-  });
 }
+
+function updateSection() {
+  const degreeTag = document.querySelector("#degree");
+  const descriptionTag = document.querySelector("#description");
+  const humidityTag = document.querySelector("#humidity");
+  const windTag = document.querySelector("#wind");
+  const dateTag = document.querySelector("#date");
+  dateTag.innerHTML = pages[pageNumber].date;
+  degreeTag.innerHTML = pages[pageNumber].degree;
+  descriptionTag.innerHTML = pages[pageNumber].description;
+  humidityTag.innerHTML = pages[pageNumber].humidity;
+  windTag.innerHTML = pages[pageNumber].wind;
+  let icon = document.querySelector("#icon");
+  let code = pages[pageNumber].icon;
+  if (code === "11d") {
+    icon.setAttribute("src", "Images/Thunderstorm.png");
+  } else if (code === "09d") {
+    icon.setAttribute("src", "Images/Rain.png");
+  } else if (code === "10d") {
+    icon.setAttribute("src", "Images/DayRain.png");
+  } else if (code === "09d") {
+    icon.setAttribute("src", "Images/NightRain.png");
+  } else if (code === "13d") {
+    icon.setAttribute("src", "Images/Snow.png");
+  } else if (code === "50d") {
+    icon.setAttribute("src", "Images/Mist.png");
+  } else if (code === "01d") {
+    icon.setAttribute("src", "Images/Sun.png");
+  } else if (code === "01n") {
+    icon.setAttribute("src", "Images/Moon.png");
+  } else if (code === "02d") {
+    icon.setAttribute("src", "Images/DayCloud.png");
+  } else if (code === "02n") {
+    icon.setAttribute("src", "Images/NightCloud.png");
+  } else if (code === "03d" || code === "03n") {
+    icon.setAttribute("src", "Images/OneCloud.png");
+  } else if (code === "04d" || code === "04n") {
+    icon.setAttribute("src", "Images/Clouds.png");
+  }
+}
+
+const next = function () {
+  pageNumber = pageNumber + 1;
+  if (pageNumber > pages.length - 1) {
+    pageNumber = 0;
+  }
+  updateSection();
+};
+
+const prev = function () {
+  pageNumber = pageNumber - 1;
+  if (pageNumber < 0) {
+    pageNumber = pages.length - 1;
+  }
+  updateSection();
+};
+
+const nextTag = document.querySelector("#right-arrow");
+nextTag.addEventListener("click", function () {
+  next();
+});
+
+const prevTag = document.querySelector("#left-arrow");
+prevTag.addEventListener("click", function () {
+  prev();
+});
+
+document.addEventListener("keyup", function (event) {
+  console.log(event);
+  if (event.key === "ArrowRight") {
+    next();
+  }
+  if (event.key === "ArrowLeft") {
+    prev();
+  }
+});
