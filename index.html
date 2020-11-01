@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <title></title>
-</head>
-
-<body>
-  <header>
-    <span id="text"><img src="Images/pin.png" id="locate-me" /><span>Get Location</span></span>
-    <span id="time"></span>
-    <form id="search-form">
-      <input type="search" id="search-input" />
-      <img id="magnify" src="" />
-    </form>
-  </header>
-  <main>
-    <h1>
-      <span id="city"></span>
-    </h1>
-    <h2 id="date"></h2>
-    <div class="weather">
-      <div class="arrows">
-        <button><img id="left-arrow" src="Images/leftarrow.png" /></button>
-        <img id="icon" src="#" />
-        <button><img id="right-arrow" src="Images/rightarrow.png" /></button>
-      </div>
-      <div id="on-icon">
-        <span id="degree"></span><span id="degree-symbol">&deg;</span>
-        <br />
-        <div class="button">
-          <button id="celsius">C</button>
-          <button id="farenheit">F</button>
+  <body>
+    <header>
+      <span id="text"
+        ><img src="Images/pin.png" id="locate-me" /><span
+          >Get Location</span
+        ></span
+      >
+      <span id="time"></span>
+      <form id="search-form">
+        <input type="search" id="search-input" />
+        <img id="magnify" src="" />
+      </form>
+    </header>
+    <main>
+      <h1>
+        <span id="city"></span>
+      </h1>
+      <h2 id="date"></h2>
+      <div class="weather">
+        <div class="arrows">
+          <button><img id="left-arrow" src="Images/leftarrow.png" /></button>
+          <img id="icon" src="#" />
+          <button><img id="right-arrow" src="Images/rightarrow.png" /></button>
         </div>
+        <div id="on-icon">
+          <span id="degree"></span><span id="degree-symbol">&deg;</span>
+          <br />
+          <div class="button">
+            <button id="celsius">C</button>
+            <button id="farenheit">F</button>
+          </div>
+        </div>
+        <p id="forecast">
+          <span id="description"></span><br />
+          Humidity: <span id="humidity"></span>% | Wind:
+          <span id="wind"></span> mph
+        </p>
       </div>
-      <p id="forecast">
-        <span id="description"></span><br />
-        Humidity: <span id="humidity"></span>% | Wind:
-        <span id="wind"></span> mph
-      </p>
-    </div>
-    <img class="animation-icon" id="one" src="Images/cloud.png" />
-    <img class="animation-icon" id="two" src="Images/cloud.png" />
-    <img class="animation-icon" id="three" src="Images/cloud.png" />
-    <img class="animation-icon" id="four" src="Images/cloud.png" />
-  </main>
-  <img class="grass" src="Images/Grass.png" alt="An illustration of grass." />
-  <footer>
-    <a href="https://github.com/jennarayman/Weather-App">Open Source Code</a>
-    by Jenna Rayman
-  </footer>
-  <script src="main.js"></script>
-</body>
-
+      <img class="animation-icon" id="one" src="Images/cloud.png" />
+      <img class="animation-icon" id="two" src="Images/cloud.png" />
+      <img class="animation-icon" id="three" src="Images/cloud.png" />
+      <img class="animation-icon" id="four" src="Images/cloud.png" />
+    </main>
+    <img class="grass" src="Images/Grass.png" alt="An illustration of grass." />
+    <footer>
+      <a href="https://github.com/jennarayman/Weather-App">Open Source Code</a>
+      by Jenna Rayman
+    </footer>
+    <script src="main.js"></script>
+  </body>
 </html>
