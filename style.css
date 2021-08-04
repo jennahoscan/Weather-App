@@ -2,185 +2,109 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   box-sizing: border-box;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  width: 100vw;
-}
-
-h1,
-h2,
-p,
-span {
-  text-align: center;
+  background-image: linear-gradient(to top, #7aadff 0%, #c2e9fb 100%);
   font-family: "Quicksand", sans-serif;
+  font-size: 20px;
   color: #ffffff;
 }
 
-#search-form {
-  position: relative;
+.row {
+  width: 100vw;
 }
 
-#search-form img {
-  position: absolute;
-  top: 5px;
-  right: 35px;
-  height: 25px;
-}
-
-h1 {
-  font-size: 75px;
-  font-weight: 700;
-}
-
-h2 {
-  font-weight: 400;
-}
-
-#on-icon {
-  position: relative;
-  left: 650px;
-  bottom: 155px;
-}
-
-#degree {
-  position: relative;
-  left: 35px;
-  font-size: 60px;
+header {
+  height: 10vh;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #000000;
 }
 
-#degree-symbol {
-  font-size: 40px;
-  position: relative;
-  bottom: 25px;
-  left: 35px;
-  color: #000000;
-}
-
-#locate-me {
+header img {
   height: 25px;
   width: 25px;
-  vertical-align: middle;
-  margin-right: 5px;
 }
 
-.button {
+input {
+  width: 10vw;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  border-radius: 30px;
   position: relative;
-  left: 45px;
+}
+
+#magnify {
+  position: relative;
+  top: 50%;
+  right: 10%;
 }
 
 button {
   background: none;
   border: none;
-  font-size: 25px;
-  color: #ffffff;
-  font-family: "Quicksand", sans-serif;
-  font-weight: bold;
-  color: #000000;
+  font-size: 1.5rem;
 }
 
-#celsius {
-  padding-right: 5px;
-}
-#farenheit {
-  border-left: 1px solid #000;
-  padding-left: 5px;
-}
-#forecast {
-  position: relative;
-  bottom: 50px;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-#time {
-  font-size: 25px;
-  font-weight: 600;
-}
-
-#inner {
-  padding-bottom: 10px;
-}
-
-#text {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 20px;
-  margin-bottom: 5px;
-}
-
-#description {
-  text-transform: capitalize;
+h1 {
+  font-size: 4rem;
   font-weight: bold;
 }
-img.grass {
-  width: 100vw;
-  height: 30%;
-  position: fixed;
-  bottom: 0;
+
+h2 {
+  font-size: 1.5rem;
 }
 
-img.menu {
+.arrows {
+  height: 75px;
   width: 50px;
-  height: 50px;
-  margin-left: 25px;
-  opacity: 0.75;
-  margin-right: 100px;
 }
 
 #icon {
-  width: 200px;
-  height: 200px;
-  justify-content: center;
+  height: auto;
+  width: 100%;
+  max-width: 300px;
 }
 
-input {
-  margin-right: 25px;
-  background-color: rgba(255, 255, 255, 0.75);
-  width: 150px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
+.illustrated-forecast {
+  position: relative;
 }
 
-div.weather {
-  justify-content: center;
+.temperature {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
 }
 
-div.arrows {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 25px;
+#degree {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
 }
 
-#left-arrow {
-  width: 50px;
-  height: 80px;
-  margin-left: 400px;
+#degree-symbol {
+  vertical-align: top;
+  font-size: 2rem;
+  color: #000;
 }
 
-#right-arrow {
-  width: 50px;
-  height: 80px;
-  margin-right: 400px;
+#description {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description {
+  height: 25vh;
+  z-index: 1040;
 }
 
 .animation-icon {
   width: 175px;
-  z-index: -1;
 }
 
 #one {
@@ -211,28 +135,19 @@ div.arrows {
   opacity: 0.35;
 }
 
-#open {
-  margin-top: 50px;
-  z-index: 50;
-}
-
-#hidden-time {
-  text-align: center;
-  color: white;
-  font-family: "Quicksand", sans-serif;
-}
-
 footer {
   position: relative;
-  text-align: center;
-  z-index: 5;
-  padding-bottom: 15px;
-  padding-top: 75px;
-  font-family: "Quicksand", sans-serif;
-  color: #ffffff;
-  font-size: 20px;
+  z-index: 1040;
 }
 
 footer a {
-  color: white;
+  color: #ffffff;
+}
+
+.date {
+  height: 25vh;
+}
+
+.forecast {
+  height: 30vh;
 }

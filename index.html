@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
@@ -11,55 +17,94 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
-
   <body>
-    <header>
-      <span id="text"
-        ><img src="Images/pin.png" id="locate-me" /><span
-          >Get Location</span
-        ></span
-      >
-      <span id="time"></span>
-      <form id="search-form">
-        <input type="search" id="search-input" />
-        <img id="magnify" src="" />
-      </form>
-    </header>
-    <main>
-      <h1>
-        <span id="city"></span>
-      </h1>
-      <h2 id="date"></h2>
-      <div class="weather">
-        <div class="arrows">
-          <button><img id="left-arrow" src="Images/leftarrow.png" /></button>
-          <img id="icon" src="#" />
-          <button><img id="right-arrow" src="Images/rightarrow.png" /></button>
+    <div class="container-fluid">
+    <!–– Header Content ––>
+      <header class="row align-items-center justify-content-between bg-warning">
+        <div class="col-3">
+          <p id="locate">
+            <img class="img-fluid" id="pin" src="Images/Pin.png" />
+            <span class="d-none d-sm-inline">Get Location</span>
+          </p>
         </div>
-        <div id="on-icon">
-          <span id="degree"></span><span id="degree-symbol">&deg;</span>
-          <br />
-          <div class="button">
-            <button id="celsius">C</button>
-            <button id="farenheit">F</button>
+        <div class="col-3 text-center">
+          <p id="time"></p>
+        </div>
+        <div class="col-3 text-end">
+          <form clid="search-form">
+            <input class="d-none d-sm-inline" type="search" id="search-input" />
+            <img id="magnify" src="" />
+          </form>
+        </div>
+      </header>
+    <!–– Header Content End ––>
+      <main>
+    <!–– City and Date ––>
+        <div class="row date text-center align-items-center">
+          <div class="col">
+            <h1 id="city"></h1>
+            <h2 id="date"></h2>
           </div>
         </div>
-        <p id="forecast">
-          <span id="description"></span><br />
-          Humidity: <span id="humidity"></span>% | Wind:
-          <span id="wind"></span> mph
+        <div class="row forecast text-center align-items-center justify-content-center">
+          <div class="col-2">
+            <button>
+              <img
+                class="arrows img-fluid"
+                id="left-arrow"
+                src="Images/LeftArrow.png"
+              />
+            </button>
+          </div>
+          <div class="col-4 illustrated-forecast">
+            <picture>
+              <img id="icon" class="img-fluid" src="" />
+            <div class="temperature">
+              <span id="degree"></span><span id="degree-symbol">&deg;</span>
+              <div class="buttons">
+                <button id="celsius">C&nbsp;</button>
+                <button id="farenheit">| F</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <button>
+              <img
+                class="arrows img-fluid"
+                id="right-arrow"
+                src="Images/RightArrow.png"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="row text-center description">
+          <div class="col">
+            <p class="text-capitalize" id="description"></p>
+            <p>
+              Humidity: <span id="humidity"></span>% | Wind:
+              <span id="wind"></span>
+              mph
+            </p>
+          </div>
+        </div>
+      </main>
+      <footer class="row text-center align-items-center">
+        <p>
+          <a
+            href="https://github.com/jennarayman/Weather-App"
+            target="_blank"
+            rel="noreferrer"
+            >Open Source Code</a
+          >
+          by Jenna Rayman
         </p>
-      </div>
-      <img class="animation-icon" id="one" src="Images/cloud.png" />
-      <img class="animation-icon" id="two" src="Images/cloud.png" />
-      <img class="animation-icon" id="three" src="Images/cloud.png" />
-      <img class="animation-icon" id="four" src="Images/cloud.png" />
-    </main>
-    <img class="grass" src="Images/Grass.png" alt="An illustration of grass." />
-    <footer>
-      <a href="https://github.com/jennarayman/Weather-App">Open Source Code</a>
-      by Jenna Rayman
-    </footer>
+      </footer>
+    <img class="animation-icon img-fluid" id="one" src="Images/Cloud.png" />
+    <img class="animation-icon img-fluid" id="two" src="Images/Cloud.png" />
+    <img class="animation-icon img-fluid" id="three" src="Images/Cloud.png" />
+    <img class="animation-icon img-fluid" id="four" src="Images/Cloud.png" />
+    <img class="grass img-fluid fixed-bottom" src="Images/Grass.png" />
+  </div>
     <script src="main.js"></script>
   </body>
 </html>
