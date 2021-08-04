@@ -9,7 +9,7 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -19,11 +19,11 @@
   </head>
   <body>
     <div class="container-fluid">
-    <!–– Header Content ––>
-      <header class="row align-items-center justify-content-between bg-warning">
+      <!–– Header Content ––>
+      <header class="row align-items-center justify-content-between">
         <div class="col-3">
           <p id="locate">
-            <img class="img-fluid" id="pin" src="Images/Pin.png" />
+            <img id="pin" src="Images/Pin.png" />
             <span class="d-none d-sm-inline">Get Location</span>
           </p>
         </div>
@@ -31,22 +31,25 @@
           <p id="time"></p>
         </div>
         <div class="col-3 text-end">
-          <form clid="search-form">
-            <input class="d-none d-sm-inline" type="search" id="search-input" />
+          <form id="search-form">
+            <input type="search" id="search-input" />
             <img id="magnify" src="" />
           </form>
         </div>
       </header>
-    <!–– Header Content End ––>
+      <!–– Header Content End ––>
       <main>
-    <!–– City and Date ––>
+        <!–– City and Date Content ––>
         <div class="row date text-center align-items-center">
           <div class="col">
             <h1 id="city"></h1>
             <h2 id="date"></h2>
           </div>
         </div>
-        <div class="row forecast text-center align-items-center justify-content-center">
+        <!–– City and Date Content End ––>
+        <div
+          class="row forecast text-center align-items-center justify-content-center"
+        >
           <div class="col-2">
             <button>
               <img
@@ -57,8 +60,7 @@
             </button>
           </div>
           <div class="col-4 illustrated-forecast">
-            <picture>
-              <img id="icon" class="img-fluid" src="" />
+            <img id="icon" class="img-fluid" src="" />
             <div class="temperature">
               <span id="degree"></span><span id="degree-symbol">&deg;</span>
               <div class="buttons">
@@ -99,12 +101,12 @@
           by Jenna Rayman
         </p>
       </footer>
-    <img class="animation-icon img-fluid" id="one" src="Images/Cloud.png" />
-    <img class="animation-icon img-fluid" id="two" src="Images/Cloud.png" />
-    <img class="animation-icon img-fluid" id="three" src="Images/Cloud.png" />
-    <img class="animation-icon img-fluid" id="four" src="Images/Cloud.png" />
-    <img class="grass img-fluid fixed-bottom" src="Images/Grass.png" />
-  </div>
-    <script src="main.js"></script>
+      <img class="animation-icon img-fluid" id="one" src="Images/Cloud.png" />
+      <img class="animation-icon img-fluid" id="two" src="Images/Cloud.png" />
+      <img class="animation-icon img-fluid" id="three" src="Images/Cloud.png" />
+      <img class="animation-icon img-fluid" id="four" src="Images/Cloud.png" />
+      <img class="grass img-fluid fixed-bottom" src="Images/Grass.png" />
+      <script src="main.js"></script>
+    </div>
   </body>
 </html>
