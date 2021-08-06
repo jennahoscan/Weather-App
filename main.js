@@ -170,6 +170,9 @@ function convertToFarenheit(event) {
   let tempElement = document.querySelector("#degree");
   let temp = tempElement.innerHTML;
   tempElement.innerHTML = Math.round((temp * 9) / 5 + 32);
+  document.getElementById("farenheit").disabled = true;
+  document.getElementById("celsius").disabled = false;
+  event.preventDefault();
 }
 
 let farenheitLink = document.querySelector("#farenheit");
@@ -180,6 +183,8 @@ function convertToCelsius(event) {
   let tempElement = document.querySelector("#degree");
   let temp = tempElement.innerHTML;
   tempElement.innerHTML = Math.round(((temp - 32) * 5) / 9);
+  document.getElementById("celsius").disabled = true;
+  document.getElementById("farenheit").disabled = false;
 }
 
 let celsiusLink = document.querySelector("#celsius");
@@ -187,51 +192,50 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 //Change Background Gradient by Time
 var today = new Date().getHours();
-let searchBar = document.querySelector("#magnify");
 if (today >= 0 && today <= 2) {
   document.body.style.backgroundImage =
     "linear-gradient(to top, #1b2c47 0%, #000000 100%)";
-  searchBar.setAttribute("src", "Images/magnify000.png");
+  document.getElementById("magnify").style.color = "#000";
 } else if (today === 3 || today === 4) {
   document.body.style.backgroundImage =
     "linear-gradient(to top, #225a85 0%, #1b2c47 100%)";
-  searchBar.setAttribute("src", "Images/magnify1b2c47.png");
+  document.getElementById("magnify").style.color = "#1b2c47";
 } else if (today === 5 || today === 6) {
   document.body.style.backgroundImage =
     "linear-gradient(to top, #9598f0 0%, #225a85 100%)";
-  searchBar.setAttribute("src", "Images/magnify225a85.png");
+  document.getElementById("magnify").style.color = "#225a85";
 } else if (today === 7) {
   document.body.style.backgroundImage =
     "linear-gradient(to bottom, #9598f0 0%, #a1c4fd 100%)";
-  searchBar.setAttribute("src", "Images/magnify9598f0.png");
+  document.getElementById("magnify").style.color = "#9598f0";
 } else if (today >= 8 && today <= 11) {
   document.body.style.backgroundImage =
     "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)";
-  searchBar.setAttribute("src", "Images/magnifyc2e9fb.png");
+  document.getElementById("magnify").style.color = "#c2e9fb";
 } else if (today >= 12 && today <= 14) {
   document.body.style.backgroundImage =
     "linear-gradient(to top, #7aadff 0%, #c2e9fb 100%)";
-  searchBar.setAttribute("src", "Images/magnifyc2e9fb.png");
+  document.getElementById("magnify").style.color = "#c2e9fb";
 } else if (today === 15 || today === 16) {
   document.body.style.backgroundImage =
     "linear-gradient(to top, #a1c4fd 0%, #7aadff 100%)";
-  searchBar.setAttribute("src", "Images/magnify7aadff.png");
+  document.getElementById("magnify").style.color = "#7aadff";
 } else if (today === 17 || today === 18) {
   document.body.style.backgroundImage =
     "linear-gradient(to bottom, #a1c4fd 0%, #5d4ba1 100%)";
-  searchBar.setAttribute("src", "Images/magnifya1c4fd.png");
+  document.getElementById("magnify").style.color = "#a1c4fd";
 } else if (today === 19) {
   document.body.style.backgroundImage =
     "linear-gradient(to bottom, #5d4ba1 0%, #032845 100%)";
-  searchBar.setAttribute("src", "Images/magnify5d4ba1.png");
+  document.getElementById("magnify").style.color = "#5d4ba1";
 } else if (today === 20 || today === 21) {
   document.body.style.backgroundImage =
     "linear-gradient(to bottom, #394475 0%, #000000 100%)";
-  searchBar.setAttribute("src", "Images/magnify394475.png");
+  document.getElementById("magnify").style.color = "#394475";
 } else if (today === 22 || today === 23) {
   document.body.style.backgroundImage =
     "linear-gradient(to bottom, #000000 0%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%)";
-  searchBar.setAttribute("src", "Images/magnify000.png");
+  document.getElementById("magnify").style.color = "#000";
 }
 
 //Use Arrows to Click Through Forecast
@@ -344,6 +348,8 @@ function updateSection() {
   } else if (code === "04d" || code === "04n") {
     icon.setAttribute("src", "Images/Clouds.png");
   }
+  document.getElementById("farenheit").disabled = false;
+  document.getElementById("celsius").disabled = true;
 }
 
 const next = function () {

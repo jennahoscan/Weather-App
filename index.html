@@ -3,95 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!–– Bootstrap CDN ––>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!–– Bootstrap CDN End––>
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/24ffbfe907.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container-fluid">
       <!–– Header Content ––>
-      <header class="row align-items-center justify-content-between">
-        <div class="col-3">
-          <p id="locate">
-            <img id="pin" src="Images/Pin.png" />
-            <span class="d-none d-sm-inline">Get Location</span>
+      <header class="row header align-items-center justify-content-between">
+        <div class="col-2 col-md-3 text-md-start">
+          <button>
+            <p id="locate">
+            <i class="fa fa-map-marker-alt"></i>
+            <span class="location-text d-none d-md-inline">Get Location</span>
           </p>
+        </button>
         </div>
-        <div class="col-3 text-center">
+        <div class="col-6 col-md-3">
           <p id="time"></p>
         </div>
-        <div class="col-3 text-end">
-          <form id="search-form">
-            <input type="search" id="search-input" />
-            <img id="magnify" src="" />
+        <div class="col-2 col-md-3">
+          <form class="di-inline" id="search-form">
+            <div class="inputContainer">
+              <i class="fa fa-search icon bg-info" id="magnify"> </i>
+              <input class="Field d-none d-md-inline" type="search" id="search-input" />
+            </div>
           </form>
         </div>
       </header>
       <!–– Header Content End ––>
+      <div class="row test3 align-items-center">
+        <div class="col">
+      <p class="display-test bg-warning">This web application can only be accessed on a device with a wider screen.</p>
+        </div>
+      </div>
       <main>
+        <div class="row main-content align-items-center">
+          <div class="col-12">
         <!–– City and Date Content ––>
-        <div class="row date text-center align-items-center">
+        <div class="row date align-items-center">
           <div class="col">
             <h1 id="city"></h1>
             <h2 id="date"></h2>
           </div>
         </div>
         <!–– City and Date Content End ––>
+        <!--Forecast Content-->
         <div
-          class="row forecast text-center align-items-center justify-content-center"
+          class="row forecast align-items-center justify-content-center"
         >
           <div class="col-2">
             <button>
-              <img
-                class="arrows img-fluid"
+              <i
+                class="arrows fa fa-chevron-left"
                 id="left-arrow"
-                src="Images/LeftArrow.png"
-              />
+              ></i>
             </button>
           </div>
-          <div class="col-4 illustrated-forecast">
+          <div class="col-8 illustrated-forecast">
             <img id="icon" class="img-fluid" src="" />
             <div class="temperature">
               <span id="degree"></span><span id="degree-symbol">&deg;</span>
-              <div class="buttons">
-                <button id="celsius">C&nbsp;</button>
-                <button id="farenheit">| F</button>
-              </div>
+              <p class="buttons">
+                <button id="celsius" disabled>C&nbsp;</button>
+                <span>|</span>
+                <button id="farenheit">F</button>
+              </p>
             </div>
           </div>
           <div class="col-2">
             <button>
-              <img
-                class="arrows img-fluid"
-                id="right-arrow"
-                src="Images/RightArrow.png"
-              />
+              <i
+              class="arrows fa fa-chevron-right"
+              id="right-arrow"
+            ></i>
             </button>
           </div>
         </div>
-        <div class="row text-center description">
+        <!--Forecast Content End-->
+        <!–– Description Content ––>
+        <div class="row description">
           <div class="col">
             <p class="text-capitalize" id="description"></p>
-            <p>
+            <p id="description2">
               Humidity: <span id="humidity"></span>% | Wind:
               <span id="wind"></span>
               mph
             </p>
           </div>
         </div>
+        <!–– Description Content End ––>
       </main>
-      <footer class="row text-center align-items-center">
-        <p>
+    </div>
+  </div>
+  <!–– Footer Content ––>
+      <footer class="row">
+        <p class="fixed-bottom">
           <a
             href="https://github.com/jennarayman/Weather-App"
             target="_blank"
@@ -101,11 +124,18 @@
           by Jenna Rayman
         </p>
       </footer>
+  <!––Footer Content End––>
+  <!--Illustration Content-->
+  <div class="row">
+    <div class="col icons">
       <img class="animation-icon img-fluid" id="one" src="Images/Cloud.png" />
       <img class="animation-icon img-fluid" id="two" src="Images/Cloud.png" />
       <img class="animation-icon img-fluid" id="three" src="Images/Cloud.png" />
       <img class="animation-icon img-fluid" id="four" src="Images/Cloud.png" />
+  </div>
+  </div>
       <img class="grass img-fluid fixed-bottom" src="Images/Grass.png" />
+  <!--Illustration Content End-->
       <script src="main.js"></script>
     </div>
   </body>
