@@ -25,7 +25,7 @@ function formatDate(timestamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday"
   ];
 
   let dayNumber = date.getDay();
@@ -43,7 +43,7 @@ function formatDate(timestamp) {
     "September",
     "October",
     "November",
-    "December",
+    "December"
   ];
 
   let monthNumber = date.getMonth();
@@ -161,7 +161,7 @@ function locateUser() {
   }
 }
 
-let button = document.querySelector("#text");
+let button = document.querySelector("#locate");
 button.addEventListener("click", locateUser);
 
 //Convert Between Celsius and Farenheit
@@ -253,7 +253,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[1].weather[0].description,
       humidity: response.data.daily[1].humidity,
       wind: Math.round(response.data.daily[1].wind_speed),
-      icon: response.data.daily[1].weather[0].icon,
+      icon: response.data.daily[1].weather[0].icon
     },
     {
       date: formatDate(response.data.daily[2].dt * 1000),
@@ -261,7 +261,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[2].weather[0].description,
       humidity: response.data.daily[2].humidity,
       wind: Math.round(response.data.daily[2].wind_speed),
-      icon: response.data.daily[2].weather[0].icon,
+      icon: response.data.daily[2].weather[0].icon
     },
     {
       date: formatDate(response.data.daily[3].dt * 1000),
@@ -269,7 +269,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[3].weather[0].description,
       humidity: response.data.daily[3].humidity,
       wind: Math.round(response.data.daily[3].wind_speed),
-      icon: response.data.daily[3].weather[0].icon,
+      icon: response.data.daily[3].weather[0].icon
     },
     {
       date: formatDate(response.data.daily[4].dt * 1000),
@@ -277,7 +277,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[4].weather[0].description,
       humidity: response.data.daily[4].humidity,
       wind: Math.round(response.data.daily[4].wind_speed),
-      icon: response.data.daily[4].weather[0].icon,
+      icon: response.data.daily[4].weather[0].icon
     },
     {
       date: formatDate(response.data.daily[5].dt * 1000),
@@ -285,7 +285,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[5].weather[0].description,
       humidity: response.data.daily[5].humidity,
       wind: Math.round(response.data.daily[5].wind_speed),
-      icon: response.data.daily[5].weather[0].icon,
+      icon: response.data.daily[5].weather[0].icon
     },
     {
       date: formatDate(response.data.daily[6].dt * 1000),
@@ -293,7 +293,7 @@ function getWeeklyForecast(response) {
       description: response.data.daily[6].weather[0].description,
       humidity: response.data.daily[6].humidity,
       wind: Math.round(response.data.daily[6].wind_speed),
-      icon: response.data.daily[6].weather[0].icon,
+      icon: response.data.daily[6].weather[0].icon
     },
     {
       date: formatDate(response.data.current.dt * 1000),
@@ -301,8 +301,8 @@ function getWeeklyForecast(response) {
       description: response.data.current.weather[0].description,
       humidity: response.data.current.humidity,
       wind: Math.round(response.data.current.wind_speed),
-      icon: response.data.current.weather[0].icon,
-    },
+      icon: response.data.current.weather[0].icon
+    }
   ];
 }
 
