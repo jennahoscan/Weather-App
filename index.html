@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!–– Bootstrap CDN ––>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <!–– Bootstrap CDN End––>
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -24,119 +22,88 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container-fluid">
-      <!–– Header Content ––>
-      <header class="row header align-items-center justify-content-between">
+    <div class="container-fluid g-0">
+      <!--Header-->
+      <header class="row align-items-center justify-content-between g-0">
         <div class="col-2 col-md-3 text-md-start">
           <button>
             <p id="locate">
             <i class="fa fa-map-marker-alt"></i>
             <span class="location-text d-none d-md-inline">Get Location</span>
-          </p>
-        </button>
+            </p>
+          </button>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-5 col-md-3">
           <p id="time"></p>
         </div>
         <div class="col-2 col-md-3">
-          <form class="di-inline" id="search-form">
-            <div class="inputContainer">
-              <i class="fa fa-search icon bg-info" id="magnify"> </i>
-              <input class="Field d-none d-md-inline" type="search" id="search-input" />
-            </div>
+          <form id="search-form">
+            <i class="fa fa-search magnify" id="magnify"> </i>
+            <input class="field" type="search" id="search-input" />
           </form>
         </div>
       </header>
-      <!–– Header Content End ––>
-      <div class="row test3 align-items-center">
-        <div class="col">
-      <p class="display-test bg-warning">This web application can only be accessed on a device with a wider screen.</p>
-        </div>
-      </div>
+      <!--Header End-->
       <main>
         <div class="row main-content align-items-center">
           <div class="col-12">
-        <!–– City and Date Content ––>
-        <div class="row date align-items-center">
+      <!--City/Date Content-->
+        <div class="row align-items-center justify-content-center g-0">
           <div class="col">
             <h1 id="city"></h1>
             <h2 id="date"></h2>
           </div>
         </div>
-        <!–– City and Date Content End ––>
-        <!--Forecast Content-->
-        <div
-          class="row forecast align-items-center justify-content-center"
-        >
-          <div class="col-2">
+      <!--City/Date Content End-->
+      <!--Forecast Content-->
+        <div class="row align-items-center justify-content-center g-0">
+          <div class="col">
             <button>
-              <i
-                class="arrows fa fa-chevron-left"
-                id="left-arrow"
-              ></i>
+              <i class="arrows fa fa-chevron-left" id="left-arrow"></i>
             </button>
           </div>
-          <div class="col-8 illustrated-forecast">
+          <div class="col-8 forecast">
             <img id="icon" class="img-fluid" src="" />
             <div class="temperature">
               <span id="degree"></span><span id="degree-symbol">&deg;</span>
               <p class="buttons">
                 <button id="celsius" disabled>C&nbsp;</button>
-                <span>|</span>
+                <span class="button-divider">|</span>
                 <button id="farenheit">F</button>
               </p>
             </div>
           </div>
-          <div class="col-2">
+          <div class="col">
             <button>
-              <i
-              class="arrows fa fa-chevron-right"
-              id="right-arrow"
-            ></i>
+              <i class="arrows fa fa-chevron-right" id="right-arrow"></i>
             </button>
           </div>
         </div>
-        <!--Forecast Content End-->
-        <!–– Description Content ––>
-        <div class="row description">
+      <!--Forecast Content End-->
+      <!--Description Content-->
+        <div class="row description g-0">
           <div class="col">
             <p class="text-capitalize" id="description"></p>
-            <p id="description2">
-              Humidity: <span id="humidity"></span>% | Wind:
-              <span id="wind"></span>
-              mph
-            </p>
+            <p class="humidity-wind">Humidity: <span id="humidity"></span>% | Wind: <span id="wind"></span> mph</p>
           </div>
         </div>
-        <!–– Description Content End ––>
+      <!--Description Content End-->
       </main>
     </div>
   </div>
-  <!–– Footer Content ––>
-      <footer class="row">
-        <p class="fixed-bottom">
-          <a
-            href="https://github.com/jennarayman/Weather-App"
-            target="_blank"
-            rel="noreferrer"
-            >Open Source Code</a
-          >
-          by Jenna Rayman
-        </p>
-      </footer>
-  <!––Footer Content End––>
-  <!--Illustration Content-->
-  <div class="row">
-    <div class="col icons">
-      <img class="animation-icon img-fluid" id="one" src="Images/Cloud.png" />
-      <img class="animation-icon img-fluid" id="two" src="Images/Cloud.png" />
-      <img class="animation-icon img-fluid" id="three" src="Images/Cloud.png" />
-      <img class="animation-icon img-fluid" id="four" src="Images/Cloud.png" />
+  <!--Footer-->
+  <footer class="row g-0">
+    <p class="fixed-bottom"><a href="https://github.com/jennarayman/Weather-App" target="_blank" rel="noreferrer">Open Source Code</a> by Jenna Rayman</p>
+  </footer>
+  <!--Footer End-->
+  <!--Background Illustrtions-->
+  <img class="animation-icon img-fluid" id="one" src="Images/Cloud.png" />
+  <img class="animation-icon img-fluid" id="two" src="Images/Cloud.png" />
+  <img class="animation-icon img-fluid" id="three" src="Images/Cloud.png" />
+  <img class="animation-icon img-fluid" id="four" src="Images/Cloud.png" />
+  <img class="grass img-fluid fixed-bottom" src="Images/Grass.png" />
+  <!--Background Illustrations End-->
+  <script src="main.js"></script>
   </div>
-  </div>
-      <img class="grass img-fluid fixed-bottom" src="Images/Grass.png" />
-  <!--Illustration Content End-->
-      <script src="main.js"></script>
-    </div>
-  </body>
+</body>
 </html>

@@ -1,3 +1,5 @@
+/*Global Styles*/
+
 * {
   margin: 0;
   padding: 0;
@@ -11,20 +13,19 @@ body {
   height: 100vh;
   background-image: linear-gradient(to top, #7aadff#7aadff 0%, #c2e9fb 100%);
   font-family: "Quicksand", sans-serif;
-  font-size: 20px;
   color: #ffffff;
   text-align: center;
 }
 
-.row {
+.main-content {
   width: 100vw;
+  max-height: 100vh;
+  position: relative;
+  z-index: 1060;
 }
 
-header {
-  min-height: 10vh;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 25px;
+.row {
+  width: 100vw;
 }
 
 button {
@@ -32,28 +33,23 @@ button {
   border: none;
 }
 
-button:disabled {
-  color: #000;
+/*Header Styles*/
+
+header {
+  min-height: 10vh;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-.icon {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  padding: 15px 10px;
-  color: #7aadff;
-}
-
-.Field {
-  width: 100%;
-  padding: 10px;
+#locate {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
 form {
-  position: relative;
   width: 100%;
-  max-width: 600px;
+  position: relative;
 }
 
 input {
@@ -61,19 +57,20 @@ input {
   border: none;
   border-radius: 50px;
 }
-.container-fluid {
-  position: relative;
+
+.field {
+  width: 100%;
+  padding: 10px;
 }
 
-.main-content {
-  height: 90vh;
-  position: relative;
-  z-index: 1060;
+.magnify {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 15px 10px;
 }
 
-.display-test {
-  display: none;
-}
+/*City/Date Content Styles*/
 
 h1 {
   font-size: 5rem;
@@ -84,39 +81,59 @@ h2 {
   font-size: 2rem;
 }
 
+/*Forecast Content Styles*/
+
 .arrows {
   font-size: 5rem;
   color: #fff;
 }
 
-#icon {
-  height: auto;
-  width: 100%;
-  max-width: 400px;
-  min-width: 200px;
-}
-
-.illustrated-forecast {
+.forecast {
   position: relative;
 }
 
+#icon {
+  width: 100%;
+  max-width: 400px;
+  min-width: 150px;
+}
+
 .temperature {
+  line-height: 1.25;
   position: absolute;
   top: 35%;
   left: 0;
   width: 100%;
+  color: #000;
 }
 
 #degree {
   font-size: 4rem;
   font-weight: bold;
-  color: #000;
 }
 
 #degree-symbol {
-  font-size: 2rem;
   vertical-align: top;
+  font-size: 2rem;
+}
+
+.buttons {
+  font-size: 2rem;
+}
+
+.button-divider {
   color: #000;
+}
+
+button:disabled {
+  font-weight: bold;
+  color: #000;
+}
+
+/*Desciption Content Styles*/
+
+.description {
+  height: 25vh;
 }
 
 #description {
@@ -124,65 +141,14 @@ h2 {
   font-weight: bold;
 }
 
-.description {
-  height: 25vh;
+.humidity-wind {
+  font-size: 1.25rem;
 }
 
-.temperature span {
-  color: #000;
-}
+/*Footer Styles*/
 
-.animation-icon {
-  width: 175px;
-}
-
-.grass {
-  width: 100%;
-  max-height: 20vh;
-}
-
-#one {
-  position: fixed;
-  top: 100px;
-  left: 50px;
-  opacity: 0.5;
-}
-
-#two {
-  position: fixed;
-  top: 300px;
-  left: 175px;
-  opacity: 0.25;
-}
-
-#three {
-  position: fixed;
-  top: 160px;
-  right: 50px;
-  opacity: 0.75;
-}
-
-#four {
-  position: fixed;
-  top: 275px;
-  right: 100px;
-  opacity: 0.35;
-}
-
-#locate {
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-.buttons {
-  margin: -10px;
-  font-size: 2rem;
-}
-
-.forecast {
-  margin: 25px 0;
-}
 footer {
+  font-size: 1.5rem;
   position: fixed;
   z-index: 1040;
 }
@@ -191,106 +157,194 @@ footer a {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 900px) {
-  .location-text {
+/*Background Illustration Styles*/
+
+.animation-icon {
+  width: 175px;
+  position: fixed;
+}
+
+#one {
+  top: 100px;
+  left: 50px;
+  opacity: 0.5;
+}
+
+#two {
+  top: 300px;
+  left: 175px;
+  opacity: 0.25;
+}
+
+#three {
+  top: 160px;
+  right: 50px;
+  opacity: 0.75;
+}
+
+#four {
+  top: 275px;
+  right: 100px;
+  opacity: 0.35;
+}
+
+.grass {
+  width: 100%;
+  max-height: 20vh;
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 576px) {
+  /*Header Styles*/
+
+  input {
+    visibility: hidden;
+  }
+
+  .magnify {
+    height: 100px;
+    color: #fff !important;
+    padding: 0;
+    top: 10px;
+    right: 30px;
+  }
+
+  /*City/Date Content Styles*/
+
+  h1 {
+    font-size: 4rem;
+    color: #000;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #000;
+  }
+
+  /*Forecast Content Styles*/
+
+  .arrows {
+    font-size: 3rem;
+  }
+
+  #degree {
+    font-size: 3.5rem;
+  }
+
+  #degree-symbol {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    font-size: 1.5rem;
+  }
+
+  /*Description Content Styles*/
+
+  #description {
     font-size: 1.25rem;
   }
 
-  @media only screen and (max-width: 576px) {
-    h1 {
-      font-size: 4rem;
-      color: #000;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      color: #000;
-    }
-
-    #description {
-      font-size: 1.25rem;
-    }
-
-    #description2 {
-      font-size: 1.25rem;
-    }
-
-    footer {
-      font-size: 1rem;
-    }
-
-    .arrows {
-      font-size: 3rem;
-    }
-
-    .icon {
-      color: #000;
-    }
-
-    #degree {
-      font-size: 3.5rem;
-    }
-
-    #degree-symbol {
-      font-size: 2rem;
-    }
-
-    .buttons {
-      font-size: 1.5rem;
-    }
-
-    .temperature {
-      height: 150px;
-    }
+  .humidity-wind {
+    font-size: 1rem;
   }
 
-  @media only screen and (max-width: 450px) {
-    .temperature {
-      top: 30%;
-    }
+  /*Footer Styles*/
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  /*Forecast Content Styles*/
+
+  .temperature {
+    top: 30%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /*Header Styles*/
+
+  .magnify {
+    right: 20px;
   }
 
-  @media only screen and (max-width: 350px) {
-    .temperature {
-      top: 25%;
-    }
+  /*City/Date Content Styles*/
+
+  h1 {
+    font-size: 3rem;
   }
 
-  @media only screen and (max-width: 325px) {
-    header {
-      visibility: hidden;
-    }
+  /*Forecast Content Styles*/
 
-    .main-content {
-      display: none;
-    }
-
-    .test3 {
-      height: 100vh;
-    }
-
-    .test3 {
-      position: relative;
-    }
-
-    .display-test {
-      position: relative;
-      z-index: 1050;
-      display: block;
-      color: #000;
-      padding: 10px;
-    }
+  .temperature {
+    top: 30%;
   }
 
-  @media only screen and (max-height: 800px) {
-    .main-content{
-      height: 80vh;
-    }
+  #degree {
+    font-size: 3rem;
   }
 
-  @media only screen and (max-height: 625px) {
+  #degree-symbol {
+    font-size: 2rem;
+  }
 
-    .main-content{
-    height: 60vh;
+  .buttons {
+    font-size: 2rem;
+  }
+
+  /*Description Content Styles*/
+
+  .description {
+    font-size: 1rem;
+  }
+
+  /*Footer Styles*/
+
+  footer {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  /*Forecast Content Styles*/
+
+  .temperature {
+    top: 30%;
+  }
+
+  #degree {
+    font-size: 2.5rem;
+  }
+
+  #degree-symbol {
+    font-size: 1.5rem;
+  }
+
+  .buttons {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  /*Global Styles*/
+
+  .main-content {
+    display: none;
+  }
+
+  /*Header Styles*/
+
+  header {
+    visibility: hidden;
+  }
+
+  /*Footer Styles*/
+
+  footer {
+    visibility: hidden;
   }
 }

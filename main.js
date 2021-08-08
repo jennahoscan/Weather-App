@@ -156,7 +156,8 @@ function locateUser() {
     humidity.innerHTML = response.data.main.humidity;
     let wind = document.querySelector("#wind");
     wind.innerHTML = Math.round(response.data.wind.speed);
-
+    document.getElementById("farenheit").disabled = false;
+    document.getElementById("celsius").disabled = true;
     fiveDayForecast(response);
   }
 }
