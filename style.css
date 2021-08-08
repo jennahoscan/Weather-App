@@ -19,7 +19,7 @@ body {
 
 .main-content {
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   position: relative;
   z-index: 1060;
 }
