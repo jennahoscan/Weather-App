@@ -36,7 +36,7 @@ button {
 /*Header Styles*/
 
 header {
-  min-height: 10vh;
+  min-height: 7vh;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -94,14 +94,14 @@ h2 {
 
 #icon {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   min-width: 150px;
 }
 
 .temperature {
   line-height: 1.25;
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 0;
   width: 100%;
   color: #000;
@@ -139,22 +139,11 @@ button:disabled {
 #description {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .humidity-wind {
   font-size: 1.25rem;
-}
-
-/*Footer Styles*/
-
-footer {
-  font-size: 1.5rem;
-  position: fixed;
-  z-index: 1040;
-}
-
-footer a {
-  color: #ffffff;
 }
 
 /*Background Illustration Styles*/
@@ -218,7 +207,7 @@ footer a {
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #000;
   }
 
@@ -247,12 +236,6 @@ footer a {
   }
 
   .humidity-wind {
-    font-size: 1rem;
-  }
-
-  /*Footer Styles*/
-
-  footer {
     font-size: 1rem;
   }
 }
@@ -301,12 +284,6 @@ footer a {
   .description {
     font-size: 1rem;
   }
-
-  /*Footer Styles*/
-
-  footer {
-    font-size: 0.75rem;
-  }
 }
 
 @media only screen and (max-width: 310px) {
@@ -339,12 +316,6 @@ footer a {
   /*Header Styles*/
 
   header {
-    visibility: hidden;
-  }
-
-  /*Footer Styles*/
-
-  footer {
     visibility: hidden;
   }
 }
